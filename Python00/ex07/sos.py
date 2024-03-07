@@ -1,7 +1,33 @@
+__doc__ = """This script translates alphanumeric strings to Morse code.
+
+Constants:
+- NESTED_MORSE: A dictionary containing mappings of alphanumeric characters
+ to Morse code representations.
+
+Functions:
+- translate(s: str) -> str:
+    Translates the input string `s` to Morse code using the mappings defined
+     in the NESTED_MORSE dictionary.
+    Raises an AssertionError if the input string contains characters
+     not present in the dictionary.
+
+- is_alphanumeric_with_spaces(s: str) -> bool:
+    Checks if the input string `s` contains
+      only alphanumeric characters and spaces.
+    Returns True if the string is alphanumeric with spaces, False otherwise.
+
+Usage:
+- Run this script with one command-line argument: the string to be translated
+    to Morse code.
+- The input string must contain only alphanumeric characters and spaces.
+- The translated Morse code will be printed to the console.
+
+Example:
+    python script_name.py "Hello World"
+    This will translate the string "Hello World" to Morse code
+        and print the result.
+"""
 import sys
-
-
-__doc__ = "print a string in Morse Code from a char string"
 
 
 NESTED_MORSE = {
@@ -53,10 +79,6 @@ NESTED_MORSE = {
     "Ü": "..-- ",
     "ß": "...--.. ",
 }
-
-
-# def find_morse_letter():
-#     return
 
 
 def translate(s):

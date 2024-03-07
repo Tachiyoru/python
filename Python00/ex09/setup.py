@@ -7,7 +7,7 @@ setup(
     author='eagle',
     author_email='eagle@42.fr',
     description='A sample test package',
-    packages=find_packages(),    
+    packages=find_packages(),
     install_requires=[],
     classifiers=[
         'License :: OSI Approved :: MIT License',
