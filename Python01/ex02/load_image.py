@@ -38,9 +38,15 @@ def ft_load(path: str) -> np.ndarray:
             image = image.convert('RGB')
         image_array = np.array(image)
         print("The shape of the image is:", image_array.shape)
+        print(image_array)
         return image_array
 
     except FileNotFoundError:
         print("Error: File not found.")
     except Exception as e:
         print("An error occurred:", e)
+
+
+if __name__ == "__main__":
+    image_path = "landscape.jpg"
+    ft_load(image_path)

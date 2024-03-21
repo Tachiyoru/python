@@ -1,0 +1,27 @@
+from load_csv import load
+import matplotlib.pyplot as plt
+
+def aff_life(data, country):
+
+    res = data[data['country'].str.contains(country)]
+    years = [int(year) for year in res.keys() if year != "country"]
+    values = [res[str(year)] for year in years]
+    plt.figure(figsize=(8, 6))
+    plt.plot(years, values, marker='', linestyle='solid')
+    plt.title(f"{country} Life expectancy Projections")
+    plt.xlabel("Year")
+    plt.ylabel("Life expectancy")
+    plt.grid(True)
+    plt.show()
+    return
+
+
+def main():
+    data = load("life_expectancy_years.csv")
+    country = "France"
+    aff_life(data, country)
+    return
+
+
+if __name__ == "__main__":
+    main()
