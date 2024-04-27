@@ -1,26 +1,9 @@
-__doc__ = """This script counts the number of uppercase letters, lowercase
-    letters, punctuation marks, spaces, and digits in a given text.
-
-Functions:
-- count(text: str) -> None:
-    Counts the occurrences of uppercase letters, lowercase letters,
-        punctuation marks, spaces, and digits in the provided text.
-    Prints the counts for each category.
-
-Usage:
-- If run as a script with a command-line argument, it will count
-    the characters in that argument.
-- If run without any command-line arguments, it will prompt the user
-    to input text to be counted.
-- The counts will be printed to the console.
--  "Python 3.0, released in 2008, was a major revision that is not
-    completely backwardcompatible with earlier versions. Python 2
-    was discontinued with version 2.7.18 in 2020."
-"""
 import sys
 
 
 def count(text):
+    """ Counts the occurrences of uppercase letters, lowercase letters,
+        punctuation marks, spaces, and digits in the provided text. """
     upper_count = 0
     lower_count = 0
     punctuation_count = 0
@@ -49,6 +32,7 @@ def count(text):
 
 
 def main():
+    print("doc is : ", count.__doc__)
     if len(sys.argv) > 2:
         raise AssertionError("Too many arguments")
     if len(sys.argv) < 2:

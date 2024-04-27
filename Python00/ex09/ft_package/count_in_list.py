@@ -18,4 +18,6 @@ Usage:
 
 
 def count_in_list(lst, item):
+    """Counts the occurrences of a specified item in the given list.
+    Returns the count of occurrences."""
     return lst.count(item)

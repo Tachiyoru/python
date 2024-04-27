@@ -1,6 +1,6 @@
 Building the package: Navigate to the root directory (ft_package) and run the following command to build your package:
 
-python setup.py sdist bdist_wheel
+        python setup.py sdist bdist_wheel
 
 This will create a source distribution (dist/ft_package-0.0.1.tar.gz) and a binary wheel distribution (dist/ft_package-0.0.1-py3-none-any.whl).
 

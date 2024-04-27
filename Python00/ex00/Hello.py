@@ -5,10 +5,7 @@ ft_dict = {"Hello": "titi!"}
 
 ft_list[1] = "World!"
 
-# ft_tuple = ("Hello", "France!")
-mutateTuple = list(ft_tuple)
-mutateTuple[1] = "France"
-ft_tuple = tuple(mutateTuple)
+ft_tuple = ("Hello", "France!")
 
 ft_set.remove("tutu!")
 ft_set.add("Paris!")
