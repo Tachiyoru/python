@@ -1,8 +1,11 @@
 from load_csv import load
 import matplotlib.pyplot as plt
 
-def aff_life(data, country):
 
+def aff_life(data, country):
+    """
+    display the information arranged in a graph.
+    """
     res = data[data['country'].str.contains(country)]
     years = [int(year) for year in res.keys() if year != "country"]
     values = [res[str(year)] for year in years]

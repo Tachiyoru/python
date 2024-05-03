@@ -1,6 +1,7 @@
 import pandas as pd
 # import numpy as np
 
+
 def load(path: str):
     """
     Load a CSV file as a pandas DataFrame.
@@ -9,13 +10,15 @@ def load(path: str):
         path (str): The path to the CSV file.
 
     Returns:
-        pd.DataFrame or None: The loaded DataFrame if successful, None otherwise.
+        pd.DataFrame or None: The loaded DataFrame if successful,
+         None otherwise.
     """
     try:
         # data = np.genfromtxt(path, delimiter=',')
-        # on ne peut pas utiliser numpy car en cas de manquement de valeur numpy leve une erreur
+        # on ne peut pas utiliser numpy car en cas de manquement de valeur
+        # numpy leve une erreur
         # tandis que pandas la remplace par NaN
-        
+
         data = pd.read_csv(path)
         print(f"Loading dataset of dimensions {data.shape}")
         return data
@@ -29,7 +32,7 @@ def load(path: str):
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         return None
-    
+
 
 def main():
     print(load("life_expectancy_years.csv"))

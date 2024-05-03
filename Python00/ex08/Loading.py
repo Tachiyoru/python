@@ -18,6 +18,7 @@ def ft_tqdm(lst: range) -> None:
     sys.stdout.write('\n')
     return lst
 
+
 def main():
     for elem in ft_tqdm(range(333)):
         sleep(0.005)
@@ -25,6 +26,7 @@ def main():
     for elem in tqdm(range(333)):
         sleep(0.005)
     print()
+
 
 if __name__ == "__main__":
     main()

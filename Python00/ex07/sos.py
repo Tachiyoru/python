@@ -53,8 +53,8 @@ NESTED_MORSE = {
 
 
 def translate(s):
-    """    Translates the input string `s` to Morse code using the mappings defined
-     in the NESTED_MORSE dictionary."""
+    """    Translates the input string `s` to Morse code using
+     the mappings defined in the NESTED_MORSE dictionary."""
     morse_code = ""
     for char in s.upper():
         if char in NESTED_MORSE:

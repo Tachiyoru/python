@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Character(ABC):
     """
     Your docstring for Class.
@@ -23,7 +24,7 @@ class Stark(Character):
     def __init__(self, first_name, is_alive=True):
         """Your docstring for Constructor."""
         super().__init__(first_name, is_alive)
-        
+
     def die(self):
         """Your docstring for Method."""
         self.is_alive = False
@@ -31,10 +32,11 @@ class Stark(Character):
 
 def main():
     Ned = Stark("Ned")
-    print(Ned.__dict__)
-    print(Ned.is_alive)
+    print("1:", Ned.__dict__)
+    print("Ned is alive is : ", Ned.is_alive)
     Ned.die()
-    print(Ned.is_alive)
+    print("Ned is alive is : ", Ned.is_alive)
+    print("---")
     print(Ned.__doc__)
     print(Ned.__init__.__doc__)
     print(Ned.die.__doc__)
@@ -42,6 +44,7 @@ def main():
     Lyanna = Stark("Lyanna", False)
     print(Lyanna.__dict__)
     # hodor = Character("hodor")
+
 
 if __name__ == "__main__":
     main()

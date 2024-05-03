@@ -3,16 +3,18 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from load_image import ft_load
 
-def zoom(image, scale=2):
+
+def zoom_image(image, scale=2):
     """
-    Takes a PIL Image and returns a new image that is a cropped "zoomed-in" version of the original.
-    
+    Takes a PIL Image and returns a new image that is a
+        cropped "zoomed-in" version of the original.
     Parameters:
     - image: a PIL Image object
-    - scale: the scale factor to zoom. Higher values result in higher zoom levels. Default is 2.
+    - scale: the scale factor to zoom. Higher values result
+      in higher zoom levels. Default is 2.
 
     Returns: a new PIL Image that is a zoomed-in version of the original image
-    The left and top define the upper left corner of the box, 
+    The left and top define the upper left corner of the box,
     while right and bottom define the lower right corner.
     """
     width, height = image.size
@@ -36,22 +38,19 @@ def rotate(image):
     Returns:
         PIL.Image.Image: The transposed image.
     """
-    image_data = np.array(image)
-    transposed_data = [[row[i] for row in image_data] for i in range(len(image_data[0]))]
+    img_d = np.array(image)
+    transposed_data = [[row[i] for row in img_d] for i in range(len(img_d[0]))]
     return Image.fromarray(np.uint8(transposed_data))
 
 
 def main():
-    """
-    Main function that demonstrates cropping and transposing an image.
-    """
     image_path = "animal.jpeg"
     img = ft_load(image_path)
 
     if img is None:
         return
 
-    img_cropped = zoom(img)
+    img_cropped = zoom_image(img)
     print(f"The shape of image is: {np.array(img_cropped).shape}")
     print(np.array(img_cropped))
 
@@ -61,7 +60,10 @@ def main():
 
     img_gray = img_transposed.convert('L')
     plt.imshow(img_gray, cmap='gray')
+    # plt.xticks([])
+    # plt.yticks([])
     plt.show()
+
 
 if __name__ == "__main__":
     main()

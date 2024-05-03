@@ -1,27 +1,7 @@
-__doc__ = """This module contains functions for calculating
- Body Mass Index (BMI) and checking if BMI values exceed a given limit.
-
-Functions:
-- give_bmi(height: list[int | float], weight: list[int | float])
-    -> list[int | float]:
-        Calculate the BMI values based on given heights and weights,
-        with the formula  BMI = weight / (height^2).
-
-- apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
-    Determine whether the BMI values exceed the given limit.
-
-Usage Example:
-    from give_bmi import give_bmi, apply_limit
-    height = [2.71, 1.15]
-    weight = [165.3, 38.4]
-    bmi = give_bmi(height, weight)
-    print(bmi, type(bmi))
-    print(apply_limit(bmi, 26))
-"""
-
-
 def give_bmi(height: list[int | float],
              weight: list[int | float]) -> list[int | float]:
+    """Calculate the BMI values based on given heights and weights,
+        with the formula  BMI = weight / (height^2)."""
     if len(height) != len(weight):
         raise ValueError("Height and weight lists must be of the same length")
     result = []
@@ -36,4 +16,17 @@ def give_bmi(height: list[int | float],
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    """Determine whether the BMI values exceed the given limit."""
     return [b > limit for b in bmi]
+
+
+def main():
+    height = [2.71, 1.15]
+    weight = [165.3, 38.4]
+    bmi = give_bmi(height, weight)
+    print(bmi, type(bmi))
+    print(apply_limit(bmi, 26))
+
+
+if __name__ == "__main__":
+    main()

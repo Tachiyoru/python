@@ -2,7 +2,11 @@ from load_csv import load
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
+
 def convert_population(population):
+    """
+    this fonction handle the way the population is displayed
+    """
     if population.endswith("M"):
         return float(population[:-1]) * 1_000_000
     elif population.endswith("k"):
@@ -12,14 +16,22 @@ def convert_population(population):
 
 
 def millions_formatter(x, pos):
+    """
+    this functions formatte the number on the scale
+        For example, if x is 1500000,
+        the function will return the string "1M".
+    """
     return f'{x / 1e6:.0f}M'
 
 
 def aff_pop(data, country, c2):
-
+    """
+    This function effectively compares the population trends of
+        two countries over time and visualizes them using a line plot.
+    """
     if country in data['country'].values and c2 in data['country'].values:
-        res = data[data['country']==country].drop('country', axis=1).T
-        res2 = data[data['country']==c2].drop('country', axis=1).T
+        res = data[data['country'] == country].drop('country', axis=1).T
+        res2 = data[data['country'] == c2].drop('country', axis=1).T
         res = res.loc['1800':'2050']
         res2 = res2.loc['1800':'2050']
         res = res.squeeze().apply(convert_population)

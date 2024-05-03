@@ -2,8 +2,10 @@ import sys
 
 
 def ft_filter(func, iterable):
-    """Filters elements from the input iterable based on the given function `func`.
- Returns a list containing elements for which `func(element)` returns `True`."""
+    """Filters elements from the input iterable based on
+            the given function `func`.
+ Returns a list containing elements for which `func(element)`
+     returns `True`."""
     return [x for x in iterable if func(x)]
 
 
