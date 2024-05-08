@@ -1,11 +1,11 @@
 import sys
 
 
-def filter_string(s, n):
+def filter_string(s, n, condition):
     """Filters words from the input string `s` based on their length,
      keeping only words longer than `n`."""
     assert isinstance(s, str) and isinstance(n, int), "the arguments are bad"
-    return [word for word in s.split() if len(word) > n]
+    return [word for word in s.split() if condition(word)]
 
 
 def main():
@@ -18,7 +18,10 @@ def main():
     if not n_str.isdigit():
         raise AssertionError("the arguments are bad")
     n = int(n_str)
-    print(filter_string(s, n))
+    
+    condition = lambda word: len(word) > n
+    
+    print(filter_string(s, n, condition))
 
 
 if __name__ == "__main__":
