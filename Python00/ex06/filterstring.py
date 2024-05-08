@@ -18,10 +18,7 @@ def main():
     if not n_str.isdigit():
         raise AssertionError("the arguments are bad")
     n = int(n_str)
-    
-    condition = lambda word: len(word) > n
-    
-    print(filter_string(s, n, condition))
+    print(filter_string(s, n, lambda x: len(x) > n))
 
 
 if __name__ == "__main__":
