@@ -10,6 +10,7 @@ class Character(ABC):
         """
         Your docstring for Constructor.
         """
+        print("///////////passe par character ///////////////")
         self.first_name = first_name
         self.is_alive = is_alive
 
