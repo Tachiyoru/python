@@ -5,7 +5,6 @@ class Baratheon(Character):
     """
     Baratheon class docstring
     """
-
     # Pas de super().__init__(first_name, is_alive)
     # = pas de passage dans character
     def __init__(self, first_name, is_alive=True):
