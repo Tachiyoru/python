@@ -9,7 +9,6 @@ ft_tuple = ("Hello", "France!")
 
 ft_set.remove("tutu!")
 ft_set.add("Paris!")
-# ft_set.update(['Paris!'])
 
 ft_dict["Hello"] = "42Paris!"
 
