@@ -33,14 +33,19 @@ def count(text):
 
 def main():
     print("doc is : ", count.__doc__)
-    if len(sys.argv) > 2:
-        raise AssertionError("Too many arguments")
-    if len(sys.argv) < 2:
-        print("What is the text to count? ")
-        str = input()
-        count(str)
-    else:
-        count(sys.argv[1])
+    try:
+        if len(sys.argv) > 2:
+            raise AssertionError("Too many arguments")
+        if len(sys.argv) < 2:
+            print("What is the text to count? ")
+            str = input()
+            count(str)
+        else:
+            count(sys.argv[1])
+    except EOFError:
+        print("Error: No input provided (EOF encountered)")
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
     return
 
 

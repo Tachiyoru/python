@@ -44,25 +44,28 @@ def rotate(image):
 
 
 def main():
-    image_path = "animal.jpeg"
-    img = ft_load(image_path)
+    try:
+        image_path = "animal.jpeg"
+        img = ft_load(image_path)
 
-    if img is None:
-        return
+        if img is None:
+            return
 
-    img_cropped = zoom_image(img)
-    print(f"The shape of image is: {np.array(img_cropped).shape}")
-    print(np.array(img_cropped))
+        img_cropped = zoom_image(img)
+        print(f"The shape of image is: {np.array(img_cropped).shape}")
+        print(np.array(img_cropped))
 
-    img_transposed = rotate(img_cropped)
-    print(f"New shape after Transpose: {np.array(img_transposed).shape}")
-    print(np.array(img_transposed))
+        img_transposed = rotate(img_cropped)
+        print(f"New shape after Transpose: {np.array(img_transposed).shape}")
+        print(np.array(img_transposed))
 
-    img_gray = img_transposed.convert('L')
-    plt.imshow(img_gray, cmap='gray')
-    # plt.xticks([])
-    # plt.yticks([])
-    plt.show()
+        img_gray = img_transposed.convert('L')
+        plt.imshow(img_gray, cmap='gray')
+        # plt.xticks([])
+        # plt.yticks([])
+        plt.show()
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
 
 
 if __name__ == "__main__":

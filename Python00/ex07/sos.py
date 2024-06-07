@@ -72,13 +72,15 @@ def is_alphanumeric_with_spaces(s):
 
 
 def main():
-    if len(sys.argv) != 2:
-        raise AssertionError("the arguments are bad")
-    s = sys.argv[1]
-    if not is_alphanumeric_with_spaces(s):
-        raise AssertionError("the arguments are bad")
-    print(translate(s))
-
+    try:
+        if len(sys.argv) != 2:
+            raise AssertionError("the arguments are bad")
+        s = sys.argv[1]
+        if not is_alphanumeric_with_spaces(s):
+            raise AssertionError("the arguments are bad")
+        print(translate(s))
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
     return
 
 

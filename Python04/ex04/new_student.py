@@ -30,11 +30,14 @@ class Student:
 
 
 def main():
-    student = Student(name="Edward", surname="agle")
-    print(student)
-    print("---ERROR CASE ---")
-    student2 = Student(name="Edward", surname="agle", id="toto")
-    print(student2)
+    try:
+        student = Student(name="Edward", surname="agle")
+        print(student)
+        print("---ERROR CASE ---")
+        student2 = Student(name="Edward", surname="agle", id="toto")
+        print(student2)
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
 
 
 if __name__ == "__main__":

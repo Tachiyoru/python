@@ -16,19 +16,15 @@ def convert_population(population):
 
 
 def millions_formatter(x, pos):
-    """
-    this functions formatte the number on the scale
+    """This functions formatte the number on the scale
         For example, if x is 1500000,
-        the function will return the string "1M".
-    """
+        the function will return the string "1M"."""
     return f'{x / 1e6:.0f}M'
 
 
 def aff_pop(data, country, c2):
-    """
-    This function effectively compares the population trends of
-        two countries over time and visualizes them using a line plot.
-    """
+    """ This function effectively compares the population trends of
+        two countries over time and visualizes them using a line plot."""
     if country in data['country'].values and c2 in data['country'].values:
         res = data[data['country'] == country].drop('country', axis=1).T
         res2 = data[data['country'] == c2].drop('country', axis=1).T
@@ -56,12 +52,15 @@ def aff_pop(data, country, c2):
 
 
 def main():
-    data = load("population_total.csv")
-    if data is not None:
-        country = "France"
-        country2 = "Belgium"
-        aff_pop(data, country, country2)
-    return
+    try:
+        data = load("population_total.csv")
+        if data is not None:
+            country = "France"
+            country2 = "Belgium"
+            aff_pop(data, country, country2)
+        return
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
 
 
 if __name__ == "__main__":

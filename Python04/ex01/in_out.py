@@ -24,15 +24,18 @@ def outer(x: int | float, function) -> object:
 
 
 def main():
-    my_counter = outer(3, square)
-    print(my_counter())
-    print(my_counter())
-    print(my_counter())
-    print("---")
-    another_counter = outer(1.5, pow)
-    print(another_counter())
-    print(another_counter())
-    print(another_counter())
+    try:
+        my_counter = outer(3, square)
+        print(my_counter())
+        print(my_counter())
+        print(my_counter())
+        print("---")
+        another_counter = outer(1.5, pow)
+        print(another_counter())
+        print(another_counter())
+        print(another_counter())
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
 
 
 if __name__ == "__main__":

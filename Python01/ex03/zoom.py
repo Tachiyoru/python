@@ -30,24 +30,27 @@ def zoom_image(image, scale=2):
 
 
 def main():
-    image_path = "animal.jpeg"
-    img = ft_load(image_path)
+    try:
+        image_path = "animal.jpeg"
+        img = ft_load(image_path)
+        if img is None:
+            return
 
-    if img is None:
-        return
+        print(f"The shape of image is: {np.array(img).shape}")
 
-    print(f"The shape of image is: {np.array(img).shape}")
+        print(np.array(img))
 
-    print(np.array(img))
+        img_zoomed = zoom_image(img)
+        print(f"New shape after slicing: {np.array(img_zoomed).shape}")
+        print(np.array(img_zoomed))
 
-    img_zoomed = zoom_image(img)
-    print(f"New shape after slicing: {np.array(img_zoomed).shape}")
-    print(np.array(img_zoomed))
-
-    plt.imshow(img_zoomed, cmap='gray')
-    plt.xticks(np.arange(0, img_zoomed.size[0], step=50))
-    plt.yticks(np.arange(0, img_zoomed.size[1], step=50))
-    plt.show()
+        img_gray = img_zoomed.convert('L')
+        plt.imshow(img_gray, cmap='gray')
+        plt.xticks(np.arange(0, img_zoomed.size[0], step=50))
+        plt.yticks(np.arange(0, img_zoomed.size[1], step=50))
+        plt.show()
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
 
 
 if __name__ == "__main__":

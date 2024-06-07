@@ -28,13 +28,18 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
 
 
 def main():
-    ft_statistics(1, 42, 360, 11, 64, to="mean", tu="median", ta="quartile")
-    print("-----")
-    ft_statistics(5, 75, 450, 18, 597, 27474, 48575, hello="std", world="var")
-    print("-----")
-    ft_statistics(5, 75, 450, 18, 597, 27474, 48575, ej="heheh", ejd="kdekem")
-    print("-----")
-    ft_statistics(toto="mean", tutu="median", tata="quartile")
+    try:
+        s = "quartile"
+        ft_statistics(1, 42, 360, 11, 64, to="mean", tu="median", ta=s)
+        print("-----")
+        s = 48575
+        ft_statistics(5, 75, 450, 18, 597, 27474, s, hello="std", world="var")
+        print("-----")
+        ft_statistics(5, 75, 450, 18, 597, 27474, s, ej="heheh", ejd="kdekem")
+        print("-----")
+        ft_statistics(toto="mean", tutu="median", tata="quartile")
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
 
 
 if __name__ == "__main__":

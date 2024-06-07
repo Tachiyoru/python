@@ -15,11 +15,14 @@ def is_even(n):
 
 
 def main():
-    if len(sys.argv) != 1:
-        raise AssertionError("Too many arguments")
-    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    filtered_numbers = ft_filter(is_even, numbers)
-    print(filtered_numbers)
+    try:
+        if len(sys.argv) != 1:
+            raise AssertionError("Too many arguments")
+        numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        filtered_numbers = ft_filter(is_even, numbers)
+        print(filtered_numbers)
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
 
 
 if __name__ == "__main__":

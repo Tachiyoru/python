@@ -3,9 +3,7 @@ import matplotlib.pyplot as plt
 
 
 def aff_life(data, country):
-    """
-    display the information arranged in a graph.
-    """
+    """Display the information arranged in a graph."""
     res = data[data['country'].str.contains(country)]
     years = [int(year) for year in res.keys() if year != "country"]
     values = [res[str(year)] for year in years]
@@ -20,10 +18,13 @@ def aff_life(data, country):
 
 
 def main():
-    data = load("life_expectancy_years.csv")
-    country = "France"
-    aff_life(data, country)
-    return
+    try:
+        data = load("life_expectancy_years.csv")
+        country = "France"
+        aff_life(data, country)
+        return
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
 
 
 if __name__ == "__main__":

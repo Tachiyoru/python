@@ -32,19 +32,22 @@ class Stark(Character):
 
 
 def main():
-    Ned = Stark("Ned")
-    print("1:", Ned.__dict__)
-    print("Ned is alive is : ", Ned.is_alive)
-    Ned.die()
-    print("Ned is alive is : ", Ned.is_alive)
-    print("---")
-    print(Ned.__doc__)
-    print(Ned.__init__.__doc__)
-    print(Ned.die.__doc__)
-    print("---")
-    Lyanna = Stark("Lyanna", False)
-    print(Lyanna.__dict__)
-    # hodor = Character("hodor")
+    try:
+        Ned = Stark("Ned")
+        print("1:", Ned.__dict__)
+        print("Ned is alive is : ", Ned.is_alive)
+        Ned.die()
+        print("Ned is alive is : ", Ned.is_alive)
+        print("---")
+        print(Ned.__doc__)
+        print(Ned.__init__.__doc__)
+        print(Ned.die.__doc__)
+        print("---")
+        Lyanna = Stark("Lyanna", False)
+        print(Lyanna.__dict__)
+        # hodor = Character("hodor")
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
 
 
 if __name__ == "__main__":

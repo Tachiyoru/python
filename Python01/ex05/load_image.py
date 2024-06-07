@@ -40,8 +40,5 @@ def ft_load(path: str):
         image_array = np.array(image)
         print("The shape of the image is:", image_array.shape)
         return image_array
-
-    except FileNotFoundError:
-        print("Error: File not found.")
     except Exception as e:
-        print("An error occurred:", e)
+        print(type(e).__name__ + ":", e)

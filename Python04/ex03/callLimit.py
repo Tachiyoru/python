@@ -19,17 +19,19 @@ def callLimit(limit: int):
 
 
 def main():
+    try:
+        @callLimit(3)
+        def f():
+            print("f()")
 
-    @callLimit(3)
-    def f():
-        print("f()")
-
-    @callLimit(1)
-    def g():
-        print("g()")
-    for i in range(3):
-        f()
-        g()
+        @callLimit(1)
+        def g():
+            print("g()")
+        for i in range(3):
+            f()
+            g()
+    except Exception as e:
+        print(type(e).__name__ + ":", e)
 
 
 if __name__ == "__main__":
