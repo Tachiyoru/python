@@ -8,34 +8,26 @@ try:
     print(array)
     # Apply invert and display the result
 
-    array = ft_invert(array)
-    plt.imshow(array)
+    plt.imshow(ft_invert(array))
     plt.title('Inverted')
     plt.show()
 
     # Apply red and display the result
-    array = ft_load("landscape.jpeg")
-    array = ft_red(array)
-    plt.imshow(array)
+    plt.imshow(ft_red(array))
     plt.title('Red')
     plt.show()
 
     # Apply green and display the result
-    array = ft_load("landscape.jpeg")
-    array = ft_green(array)
-    plt.imshow(array)
+    plt.imshow(ft_green(array))
     plt.title('Green')
     plt.show()
 
     # Apply blue and display the result
-    array = ft_load("landscape.jpeg")
-    array = ft_blue(array)
-    plt.imshow(array)
+    plt.imshow(ft_blue(array))
     plt.title('Blue')
     plt.show()
 
     # Apply grey and display the result
-    array = ft_load("landscape.jpeg")
     array = ft_grey(array)
     plt.imshow(array, cmap='gray')  # Grayscale image needs a gray colormap
     plt.title('Grey')
